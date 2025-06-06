@@ -19,6 +19,11 @@ const userSchema = new mongoose.Schema({
 });
 const User = mongoose.model('User', userSchema);
 
+// Ruta de prueba
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
 // Obtener todos los usuarios
 app.get('/api/users', async (req, res) => {
   const users = await User.find();
